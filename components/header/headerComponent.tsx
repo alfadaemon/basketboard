@@ -12,7 +12,7 @@ export const HeaderComponent = (props: HeaderComponentProps): JSX.Element => {
   return (
     <View style={styles.container}>
       <View style={styles.scoreContainer}>
-        <Text style={styles.teams}>Visita</Text>
+        <Text style={styles.teams}>Visit</Text>
         <ScoreComponent score={totalVisit} />
       </View>
       <View style={styles.scoreContainer}>
@@ -27,16 +27,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    height: '100%',
     width: '100%',
     justifyContent: 'space-between',
   },
   scoreContainer: {
     alignItems: 'center',
+    width: 260,
   },
   teams: {
     color: '#FFF',
-    fontFamily: 'Score Board',
+    fontFamily: 'scoreboard',
     fontSize: 30,
   },
 });

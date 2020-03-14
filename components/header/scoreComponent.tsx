@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   score: {
     color: '#F00',
-    fontFamily: 'Score Board',
+    fontFamily: 'scoreboard',
     fontSize: 170,
   },
 });

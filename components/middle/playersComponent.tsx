@@ -21,6 +21,7 @@ const HeaderComponent = () => {
 
 export interface PlayersComponentProp {
   players: PlayerType[];
+  increaseScore: (amount: number) => void;
 }
 
 export const PlayersComponent = (props: PlayersComponentProp): JSX.Element => {
@@ -28,11 +29,13 @@ export const PlayersComponent = (props: PlayersComponentProp): JSX.Element => {
 
   return (
     <View style={styles.container}>
+      <HeaderComponent />
       <FlatList
         data={players}
-        renderItem={({ item }) => <PlayerComponent player={item} />}
+        renderItem={({ item }) => (
+          <PlayerComponent player={item} onAffectBoard={props.increaseScore} />
+        )}
         keyExtractor={(item: { id: string }) => item.id}
-        ListHeaderComponent={() => <HeaderComponent />}
       />
     </View>
   );
@@ -53,20 +56,20 @@ const styles = StyleSheet.create({
   },
   headerNumber: {
     color: '#0F0',
-    fontFamily: 'Score Board',
+    fontFamily: 'scoreboard',
     fontSize: 25,
     textAlign: 'center',
   },
   headerDataNumber: {
     color: '#0F0',
-    fontFamily: 'Score Board',
+    fontFamily: 'scoreboard',
     fontSize: 25,
     textAlign: 'center',
     width: 30,
   },
   headerText: {
     color: '#0F0',
-    fontFamily: 'Score Board',
+    fontFamily: 'scoreboard',
     fontSize: 25,
   },
   headerPlayerInfo: {
